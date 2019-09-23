@@ -1,6 +1,6 @@
 # EpsAvlc_toys
 
-This repo stores codes I code when I don't want to study in lab.
+This repo stores codes I write when I don't want to study in lab.
 
 ## image_stitching
 
