@@ -1,0 +1,12 @@
+<launch>
+    <arg name="cam0_config" default="$(find fisheye_to_pinhole)/config/cam0.yaml"/>
+    <rosparam command="load" file="$(arg cam0_config)" ns="fisheye_to_pinhole/cam0"/>
+
+    <arg name="cam1_config" default="$(find fisheye_to_pinhole)/config/cam1.yaml"/>
+    <rosparam command="load" file="$(arg cam1_config)" ns="fisheye_to_pinhole/cam1"/>
+
+    <node name="cam_0" pkg="fisheye_to_pinhole" type="fisheye_to_pinhole" ns="fisheye_to_pinhole/cam0" output="screen"/>
+
+    <node name="cam_1" pkg="fisheye_to_pinhole" type="fisheye_to_pinhole" ns="fisheye_to_pinhole/cam1" output="screen"/>
+
+</launch>
