@@ -6,7 +6,7 @@
 
 * images before stitching
 
-<img src = 'imgs/office1.jpg'  width="40%"></img><img src = 'image_stitching/imgs/office2.jpg'  width="40%"></img>
+<img src = 'imgs/office1.jpg'  width="40%"></img><img src = 'imgs/office2.jpg'  width="40%"></img>
 
 * images after stitching
 
