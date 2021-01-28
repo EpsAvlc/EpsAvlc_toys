@@ -1,0 +1,23 @@
+model_type: POLYFISHEYE
+camera_topic: /multi/camera0/image_raw
+fisheye_image_width: 752
+fisneye_image_height: 480
+projection_parameters:
+   k2: -8.7050415961589730e-02
+   k3: 4.2868823597133021e-01
+   k4: -5.6713480322478438e-01
+   k5: 4.7263592963999956e-01
+   k6: -1.8688475224937651e-01
+   k7: 2.8088787496440466e-02
+   A11: 1.7845306049914115e+02
+   A12: 9.3772008721231242e-03
+   A22: 1.7846552157589699e+02
+   u0: 3.7307037004482993e+02
+   v0: 2.4944009722694574e+02
+
+pinhole_image_width: 376
+pinhole_image_height: 480
+
+fisheye_camera_T: [1, 0, 0, 0,
+                  0, 1, 0, 0,
+                  0, 0, 1, 0]

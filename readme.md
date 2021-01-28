@@ -4,14 +4,8 @@ This repo stores codes I write when I don't want to study in lab.
 
 ## image_stitching
 
-1. feature matching
-2. calculate homography
-3. warp perspective
+refer to [readme](image_stitching/readme.md)
 
-### images before stitching
+## fisheye_to_pinhole
 
-<img src = 'image_stitching/imgs/office1.jpg'  width="40%"></img><img src = 'image_stitching/imgs/office2.jpg'  width="40%"></img>
-
-### images after stitching
-
-<img src = 'image_stitching/imgs/stitching.jpg'  width="80%"></img>
+refer to [readme](fisheye_to_pinhole/readme.md)
