@@ -18,7 +18,10 @@ include_directories(${CERES_INCLUDE_DIRS})
 # Sophus
 find_package(Sophus REQUIRED)
 
-include_directories("/usr/include/eigen3" include)
+include_directories("/usr/include/eigen3" 
+include
+"/usr/include/suitesparse" # I don't know why I can't automatically find cs.h
+)
 
 # libs
 add_library(BALParser lib/bal_parser.cpp)
@@ -26,8 +29,7 @@ add_library(BALParser lib/bal_parser.cpp)
 
 add_executable(g2o_ba g2o_ba.cpp)
 target_link_libraries(g2o_ba
-g2o_core
-g2o_stuff
+${G2O_LIBS}
 BALParser
 )
 

@@ -31,7 +31,13 @@ public:
     std::vector<observation>& Observation()
     {
         return observations_;
-    } 
+    };
+    void Perturb(const double rotation_sigma,
+                         const double translation_sigma,
+                         const double point_sigma);
+    int NumOfCam() {return num_cameras_;};
+    int NumOfPoints() {return num_points_;};
+    double* groundtrueth_;
 private:
     int num_cameras_;
     int num_points_;

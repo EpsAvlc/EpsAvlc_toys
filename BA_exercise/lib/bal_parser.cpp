@@ -39,3 +39,32 @@ BALParser::BALParser(const string& data_file_path)
     }
 
 }
+
+void BALParser::Perturb(const double rotation_sigma,
+                         const double translation_sigma,
+                         const double point_sigma) {
+
+    double *points = mutable_points();
+    if (point_sigma > 0) {
+        for (int i = 0; i < num_points_; ++i) {
+            PerturbPoint3(point_sigma, points + 3 * i);
+        }
+    }
+
+    for (int i = 0; i < num_cameras_; ++i) {
+        double *camera = mutable_cameras() + camera_block_size() * i;
+
+        double angle_axis[3];
+        double center[3];
+        // Perturb in the rotation of the camera in the angle-axis
+        // representation
+        CameraToAngelAxisAndCenter(camera, angle_axis, center);
+        if (rotation_sigma > 0.0) {
+            PerturbPoint3(rotation_sigma, angle_axis);
+        }
+        AngleAxisAndCenterToCamera(angle_axis, center, camera);
+
+        if (translation_sigma > 0.0)
+            PerturbPoint3(translation_sigma, camera + camera_block_size() - 6);
+    }
+}

@@ -1,7 +1,13 @@
 #include <iostream>
+#include <memory>
 
 #include <g2o/core/base_vertex.h>
 #include <g2o/core/base_binary_edge.h>
+#include <g2o/core/block_solver.h>
+#include <g2o/core/optimization_algorithm_levenberg.h>
+#include <g2o/solvers/csparse/linear_solver_csparse.h>
+#include <g2o/core/robust_kernel_impl.h>
+
 #include <Eigen/Core>
 #include <sophus/se3.hpp>
 
@@ -74,24 +80,42 @@ class EdgeProjection: public g2o::BaseBinaryEdge<2, Eigen::Vector2d, VertexCamer
 {
 public:
     EIGEN_MAKE_ALIGNED_OPERATOR_NEW;
-    EdgeProjection(Eigen::Vector2d& pt): pt_(pt){};
 
     virtual void computeError() override
     {
         VertexCamera* vCam = static_cast<VertexCamera*>(_vertices[0]);
         VertexPoint* vP = static_cast<VertexPoint*>(_vertices[1]);
         Eigen::Vector2d reproj_pt = vCam->Project(vP->estimate());
-        _error = pt_ - reproj_pt;
+        _error = _measurement - reproj_pt;
     }
 
     virtual bool read(istream &in) {}
     virtual bool write(ostream &out) const {}
-public:
-    Eigen::Vector2d pt_;
 };
 
 int main()
 {
     BALParser paser("dataset/problem-16-22106-pre.txt");
+
+    // Dim of pose is 9, dim of point is 3.
+    typedef g2o::BlockSolver<g2o::BlockSolverTraits<9, 3>> BlockSolverType;
+    typedef g2o::LinearSolverCSparse<BlockSolverType::PoseMatrixType> LinearSolverType;
+    auto solver = new g2o::OptimizationAlgorithmLevenberg(
+        g2o::make_unique<BlockSolverType>(g2o::make_unique<LinearSolverType>()));
+
+    g2o::SparseOptimizer optimizer;
+    optimizer.setAlgorithm(solver);
+    optimizer.setVerbose(true);
+
+    // VertexCam
+    int num_cam = paser.NumOfCam;
+    for(int i = 0; i < num_cam; i++)
+    {
+        VertexCamera* Vcam = new VertexCamera();
+        Vcam->setId(i);
+        Vcam->setEstimate
+    }
+
     return 0;
+    
 }

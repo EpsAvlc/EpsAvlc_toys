@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/usr/include/eigen3"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/local/bin/clang",
+            "cStandard": "c11",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}
