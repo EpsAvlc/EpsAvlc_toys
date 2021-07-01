@@ -9,3 +9,7 @@ refer to [readme](image_stitching/readme.md)
 ## fisheye_to_pinhole
 
 refer to [readme](fisheye_to_pinhole/readme.md)
+
+## stereo reconstruction
+
+refer to [readme](stereo_reconstruction/readme.md)
