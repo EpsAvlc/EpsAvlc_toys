@@ -1,1 +1,2 @@
-pics/out.pcd
+pics/*.pcd
+pics/*.ply
