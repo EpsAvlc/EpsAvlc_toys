@@ -1,15 +1,23 @@
 # EpsAvlc_toys
 
-This repo stores the codes I writed when I don't want to study in the lab.
+This repo stores the codes I wrote when I didn't want to study in the lab.
 
 ## image_stitching
 
-refer to [readme](image_stitching/readme.md)
+Stitch two images.
 
 ## fisheye_to_pinhole
 
-refer to [readme](fisheye_to_pinhole/readme.md)
+Turn fisheye camera's image into pinhole camera's image. 
 
 ## stereo reconstruction
 
-refer to [readme](stereo_reconstruction/readme.md)
+Use two images to obtain dense point cloud.
+
+## cuda_raycaster
+
+A GPU-accelerated raycaster for octomap.
+
+## autodiff
+
+A ceres-like automatic derivatives computor.
