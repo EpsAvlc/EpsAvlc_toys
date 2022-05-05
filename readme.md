@@ -26,7 +26,7 @@ Functional-programming-based B spline implementation.
 
 A ceres-like automatic derivatives computor.
 
-### [convex polygon library](./CPL/)
+### [convex polygon library](https://github.com/EpsAvlc/CPL)
 A convex polygon clip library.
 
 ## Installation
