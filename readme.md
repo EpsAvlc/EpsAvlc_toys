@@ -1,6 +1,6 @@
 # EpsAvlc_toys
 
-This repo stores the codes I wrote when I didn't want to study in the lab.
+This repo stores the codes I wrote for fun.
 
 ## Overview
 ### [image_stitching](./image_stitching/)
@@ -13,7 +13,7 @@ Turn fisheye camera's image into pinhole camera's image.
 
 ### [stereo reconstruction](./stereo_reconstruction/)
 
-Use two images to obtain dense point cloud.
+Use two images to obtain dense point cloud. (Not finished)
 
 ### [cuda_raycaster](./cuda_raycaster/)
 
@@ -33,6 +33,9 @@ A convex polygon clip library.
 
 Convert float into bits, then convert bits into float following chapter 2.4 of CSAPP.
 
+### [hungary_optimizer](./hungary_optimizer/)
+
+hungray algorithm to solve the assignment problem.
 ## Installation
 
 ```bash
