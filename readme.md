@@ -36,6 +36,10 @@ Convert float into bits, then convert bits into float following chapter 2.4 of C
 ### [hungary_optimizer](./hungary_optimizer/)
 
 hungray algorithm to solve the assignment problem.
+
+### [sliding_grid](./sliding_grid/)
+Sliding gridmap/octomap. Moving gird origin without remallocing memory. 
+
 ## Installation
 
 ```bash

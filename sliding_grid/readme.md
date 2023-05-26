@@ -1,0 +1,3 @@
+# AutoSlidngGridMap
+
+![](./resources/autoSlidingGridMap.gif)
